@@ -1,0 +1,47 @@
+<div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+    
+                <button type="button" class="close"
+                    ng-click="$hide()"> &times;
+                </button>
+                <h4 class="modal-title">Nova Watchlist</h4>
+            </div>
+               
+    
+            <form role="form" id="add-list" name="listForm">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="list-name">Nome</label>
+                        <input type="text" autofocus
+                            class="form-control"
+                            id="list-name"
+                            placeholder="Nome desta watchlist"
+                            ng-model="watchlist.name"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="list-description">Breve Descrição</label>
+                        <input type="text"
+                        class="form-control"
+                        id="list-description"
+                        maxlength="40"
+                        placeholder="Descreva esta watchlist"
+                        ng-model="watchlist.description"
+                        required>
+                 </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit"
+                        class="btn btn-success"
+                        ng-click="createList()"
+                        ng-disabled="!listForm.$valid">Criar</button>
+                    <button type="button"
+                        class="btn btn-danger"
+                        ng-click="$hide()">Cancela</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

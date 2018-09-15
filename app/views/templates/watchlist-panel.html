@@ -1,0 +1,30 @@
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <span class="glyphicon glyphicon-eye-open"></span>
+        Watchlists
+        <button type="button"
+        class="btn btn-success btn-xs pull-right"
+        ng-click="showModal()">
+        <span class="glyphicon glyphicon-plus"></span>
+        </button>
+    </div>
+    <div class="panel-body">
+        <div ng-if="!watchlists.length" class="text-center">
+             Use <span class="glyphicon glyphicon-plus"></span> para criar uma lista
+        </div>
+        <div class="list-group">
+        
+            <a class="list-group-item"
+                ng-class="{ active: currentList == list.id }"
+                ng-repeat="list in watchlists track by $index"
+                ng-click="gotoList(list.id)">
+                {{list.name}}
+        {{list.id}}
+        <button type="button" class="close"
+            ng-click="deleteList(list)"> &times;
+        </button>
+        </a>
+        </div>
+    </div>
+
+</div>
